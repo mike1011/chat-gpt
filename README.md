@@ -1,5 +1,7 @@
 # ChatGPT Real-Time Chat Application
 
+![ChatGPT Interface](public/app-ui.png)
+
 ## About
 
 This project integrates OpenAI's ChatGPT with a React.js application to create a real-time chat interface. It allows users to interact with ChatGPT in a conversational manner, making use of OpenAI's powerful language model.
