@@ -1,6 +1,3 @@
-Sure! Here is the full README.md content with all the details included:
-
-```markdown
 # ChatGPT Real-Time Chat Application
 
 ## About
@@ -79,4 +76,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 For any inquiries or issues, please open an issue on the [GitHub repository](https://github.com/mike1011/chat-gpt/issues).
 
----
