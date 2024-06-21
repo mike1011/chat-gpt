@@ -21,40 +21,93 @@ header {
   justify-content: space-between;
   height: calc(100% - 50px); /* Remaining height minus header */
   overflow: hidden;
-  width: 50vw;
+  width: 100%;
+  max-width: 95%;
   margin: 0 auto;
   border: 1px solid #3968c8;
   background-color: #fff;
   padding: 5px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
 .messages {
   flex-grow: 1;
   overflow-y: auto;
-  padding: 10px;
-  overflow-x: hidden;
-  padding: 20px 20px 20px 20px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
 }
+/* Additional styles for ChatInput */
+.chatbox {
+  width: 100%;
+  min-height: 50px;
+  max-height: 500px;
+  /* padding: 10px; */
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  overflow-y: auto;
+  white-space: pre-wrap;
+}
 
 .input-area {
-  padding: 10px;
-  background-color: #fff;
   display: flex;
-  .chatbox {
-    width: 90%;
-  }
-  button {
-    width: 10%;
-    height: 100%;
-    cursor: pointer;
-    background: #008000cc;
-    color: white;
-    border: none;
-    &:hover {
-      background: #008000;
-    }    
+  flex-direction: column;
+  align-items: flex-end;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+
+.char-count {
+  align-self: flex-start;
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.send-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.api-params {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #ccc;
+}
+
+.api-params label {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.api-params input {
+  width: 100%;
+  padding: 5px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  width: 100px;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  background: #008000cc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  &:hover {
+    background: #008000;
   }
 }
 
@@ -63,15 +116,17 @@ header {
   margin-left: 12px;
   padding: 0;
   font-size: 12px;
-  text-align: left;
-  margin-bottom: 0;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
 }
 
 .user-message {
   text-align: left;
   margin: 5px;
   display: flex;
-
 }
 
 .user-message p.content {
@@ -84,7 +139,6 @@ header {
   margin-right: 40px;
 }
 
-
 .ai-message {
   text-align: left;
   margin: 5px;
@@ -94,5 +148,5 @@ header {
   justify-content: flex-start;
   border-radius: 10px;
   width: auto;
-
+  flex-direction: column;
 }
