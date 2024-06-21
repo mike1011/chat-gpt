@@ -16,8 +16,12 @@ const messagesSlice = createSlice({
       state.messages = [];
       localStorage.removeItem('chatMessages');
     },
+    deleteMessage: (state, action) => {
+      state.messages = state.messages.filter((msg, index) => index !== action.payload);
+      localStorage.setItem('chatMessages', JSON.stringify(state.messages));
+    }
   },
 });
 
-export const { addMessage, clearMessages } = messagesSlice.actions;
+export const { addMessage, clearMessages, deleteMessage } = messagesSlice.actions;
 export default messagesSlice.reducer;
