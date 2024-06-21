@@ -10,6 +10,7 @@
     "axios": "^1.6.8",
     "axios-rate-limit": "^1.4.0",
     "bootstrap": "^5.3.3",
+    "date-fns": "^3.6.0",
     "prismjs": "^1.29.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.3",

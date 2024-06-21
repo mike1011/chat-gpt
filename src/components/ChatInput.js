@@ -26,6 +26,7 @@ const ChatInput = () => {
     }
     setLoading(true);
     setError('');
+    const timestamp = new Date().toISOString(); // Ensure timestamp is a valid ISO string
     try {
       const response = await http.post(
         `${process.env.REACT_APP_OPENAI_API_BASE_URL}/chat/completions`,
@@ -45,11 +46,10 @@ const ChatInput = () => {
       const aiResponse = response.data.choices[0].message.content;
       const isComplete = response.data.choices[0].finish_reason !== 'length';
 
-      dispatch(addMessage({ text: content, from: 'user' }));
-      dispatch(addMessage({ text: aiResponse, from: 'Chat AI' }));
+      dispatch(addMessage({ text: content, from: 'user', timestamp }));
+      dispatch(addMessage({ text: aiResponse, from: 'Chat AI', timestamp: new Date().toISOString() }));
 
       if (!isComplete) {
-        // If the response is incomplete, request more content
         await sendMessage('Please continue from where you left off.', true);
       }
 
@@ -61,6 +61,7 @@ const ChatInput = () => {
       setLoading(false);
     }
   };
+
 
   const handleKeyPress = (event) => {
     if (event.key === 'Enter' && !event.shiftKey) {
